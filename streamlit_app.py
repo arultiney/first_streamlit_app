@@ -1,4 +1,4 @@
-fetcimport streamlit
+import streamlit
 import pandas
 
 
