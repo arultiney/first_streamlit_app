@@ -26,13 +26,14 @@ try:
     streamlit.error("Please select a fruit to get information")
   else:
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
-#streamlit.text(fruityvice_response.json())
-#normalize the json result
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# display the result in a table
-streamlit.dataframe(fruityvice_normalized)
+    #streamlit.text(fruityvice_response.json())
+    #normalize the json result
+    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    # display the result in a table
+    streamlit.dataframe(fruityvice_normalized)
 except URLError as e:
   streamlit.error()
+  
 streamlit.stop()
 
 #import snowflake.connector
